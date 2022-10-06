@@ -1,0 +1,16 @@
+<div class="input-container ic1">
+  <input type="text" id="width" class="input" [(ngModel)]="$any(shape).width" />
+  <div class="cut"></div>
+  <label for="width" class="placeholder">Width</label>
+</div>
+
+<div class="input-container ic2">
+  <input
+    id="height"
+    class="input"
+    type="text"
+    [(ngModel)]="$any(shape).height"
+  />
+  <div class="cut"></div>
+  <label for="height" class="placeholder">Height</label>
+</div>

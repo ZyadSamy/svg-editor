@@ -1,0 +1,67 @@
+[
+    {
+        "toolName" : "select",
+        "iconLibrary" : "fontawesome",
+        "iconName" : "fa-mouse-pointer"
+    },
+    {
+        "toolName" : "undo",
+        "iconLibrary" : "material",
+        "iconName" : "undo"
+    },
+
+    {
+        "toolName" : "redo",
+        "iconLibrary" : "material",
+        "iconName" : "redo"
+    },
+
+    {
+        "toolName" : "rectangle",
+        "iconLibrary" : "material",
+        "iconName" : "rectangle"
+    },
+
+    {
+        "toolName" : "circle",
+        "iconLibrary" : "material",
+        "iconName" : "circle"
+    },
+    
+    {
+        "toolName" : "ellipse",
+        "iconLibrary" : "",
+        "iconName" : ""
+    },
+    
+    {
+        "toolName" : "line",
+        "iconLibrary" : "fontawesome",
+        "iconName" : "fa-minus"
+    },
+
+
+    {
+        "toolName" : "customShape",
+        "iconLibrary" : "material",
+        "iconName" : "polyline"
+    },
+
+    {
+        "toolName" : "fill",
+        "iconLibrary" : "fontawesome",
+        "iconName" : "fa-fill-drip"
+    },
+    
+    {
+        "toolName" : "load",
+        "iconLibrary" : "material",
+        "iconName" : "file_upload"
+    },
+
+    {
+        "toolName" : "save",
+        "iconLibrary" : "material",
+        "iconName" : "file_download"
+    }
+]

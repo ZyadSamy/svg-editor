@@ -1,0 +1,54 @@
+<div class="form unselectable">
+  <!-- <app-layers></app-layers> -->
+  <ng-template [ngIf]="activeTool == 'select'">
+    <ng-template [ngIf]="shape != null" [ngIfElse]="selectTitle" >
+      <p class="paragraph">Drag shape to reposition</p>
+
+      <div [ngSwitch]="shape!.type">
+        <rect-sidebar *ngSwitchCase="'rectangle'" [shape]="shape"></rect-sidebar>
+        <circle-sidebar *ngSwitchCase="'circle'" [shape]="shape"></circle-sidebar>
+        <ellipse-sidebar *ngSwitchCase="'ellipse'" [shape]="shape"></ellipse-sidebar>
+      </div>
+
+      <button class="button" (click)="deleteShape()">Delete Shape</button>
+      <button class="button" (click)="cloneShape()">
+        <i class="material-icons">content_copy</i>
+        Clone
+      </button>
+      <button class="button" (click)="pushBack()" [disabled]="isPushBackDisabled()">Push Back</button>
+      <button class="button" (click)="pushForward()" [disabled]="isPushForwardDisabled()">Push Forward</button>
+    </ng-template>
+
+    <ng-template #selectTitle>
+      <div class="title">Select Shape</div>
+    </ng-template>
+  </ng-template>
+
+  <ng-template [ngIf]="activeTool == 'rectangle'">
+    <div class="title">Create a Rectangle</div>
+  </ng-template>
+
+  <ng-template [ngIf]="activeTool == 'circle'">
+    <div class="title">Create a Cirlce</div>
+  </ng-template>
+
+  <ng-template [ngIf]="activeTool == 'ellipse'">
+    <div class="title">Create an Ellipse</div>
+  </ng-template>
+
+  <ng-template [ngIf]="activeTool == 'line'">
+    <div class="title">Create a Line</div>
+  </ng-template>
+
+  <ng-template [ngIf]="activeTool == 'customShape'">
+    <div class="title">Create a Custom shape</div>
+    <p class="paragraph">
+      Choose points making up the shape and press confirm when done
+    </p>
+    <button class="button" [disabled]="isCreateShapeDisabled()" (click)="confirmShape()">Confirm Shape</button>
+  </ng-template>
+
+  <ng-template [ngIf]="activeTool == 'load'">
+    <load-sidebar></load-sidebar>
+  </ng-template>
+</div>

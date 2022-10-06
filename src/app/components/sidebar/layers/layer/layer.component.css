@@ -1,0 +1,23 @@
+.layer-background {
+    height: 35px;
+    margin-bottom: 1px;
+    color: white;
+    background: #161853;
+    font-family: sans-serif;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+
+/* This solvers a bug where creating a new shape would always select the last layer */
+.unselectable {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}

@@ -1,0 +1,66 @@
+<svg
+  id="root"
+  xmlns="http://www.w3.org/2000/svg"
+  drawableCanvas
+  [class.draw]="isCreationalToolActive()"
+  (click)="canvasClicked()"
+>
+  <g id="svg-content">
+    <g
+      *ngFor="let shape of shapes"
+      [id]="shape.id"
+      [ngSwitch]="shape.type"
+      [attr.class]="shape.styleClass"
+      [attr.fill]="shape.color"
+      [class.selectedShape]="shape.selected"
+      [selectableShape]="isSelectionToolActive()"
+      [shape]="shape"
+      draggableShape
+      (click)="shapeClicked($event, shape)"
+    >
+      <rect
+        *ngSwitchCase="'rectangle'"
+        [attr.width]="shape.width"
+        [attr.height]="shape.height"
+        [attr.x]="shape.position.x"
+        [attr.y]="shape.position.y"
+        [attr.rx]="shape.rx"
+        [attr.ry]="shape.ry"
+      />
+
+      <circle
+        *ngSwitchCase="'circle'"
+        [attr.cx]="shape.position.x"
+        [attr.cy]="shape.position.y"
+        [attr.r]="shape.radius!"
+      />
+
+      <ellipse
+        *ngSwitchCase="'ellipse'"
+        [attr.cx]="shape.position.x"
+        [attr.cy]="shape.position.y"
+        [attr.rx]="shape.radiusX"
+        [attr.ry]="shape.radiusY"
+      />
+
+      <line
+        *ngSwitchCase="'line'"
+        [attr.x1]="shape.position.x"
+        [attr.y1]="shape.position.y"
+        [attr.x2]="shape.endPosition.x"
+        [attr.y2]="shape.endPosition.y"
+        [attr.stroke]="shape.color"
+      />
+
+      <path *ngSwitchCase="'path'" [attr.d]="shape.d" />
+    </g>
+
+    <circle
+      *ngFor="let dot of customShapeDots"
+      fill="black"
+      r="1.5"
+      [attr.cx]="dot.x"
+      [attr.cy]="dot.y"
+    />
+  </g>
+</svg>

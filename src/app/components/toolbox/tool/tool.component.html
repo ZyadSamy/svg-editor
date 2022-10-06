@@ -1,0 +1,10 @@
+<div class="tool" 
+    [class.selected]="active === true">
+
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" *ngIf="toolName == 'ellipse'"
+        aria-hidden="true" role="img" width="1em" height="1em" class="ellipse" preserveAspectRatio="xMidYMid meet" 
+        viewBox="0 0 24 24"><path d="M12 4C6.5 4 2 7.58 2 12s4.5 8 10 8s10-3.58 10-8s-4.5-8-10-8z" fill="currentColor"/></svg>
+    <i *ngIf="iconLibrary=='material'" class="material-icons" >{{iconName}}</i>
+    <i *ngIf="iconLibrary=='fontawesome'" class="fas" [ngClass]="iconName"></i>
+
+</div>

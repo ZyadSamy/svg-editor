@@ -1,0 +1,38 @@
+.tool {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 2.2em;
+  height: 2.2em;
+  margin: 0.75em;
+  background-color: #292c6d;
+  color: #faedf0;
+  border-radius: 12px;
+  user-select: none;
+}
+
+.tool:hover {
+  background-color: #cac7c7;
+  cursor: pointer;
+  color: #525252;
+}
+
+.tool:active {
+  color: #ec255a;
+  background-color: #faedf0;
+}
+
+.tool.selected {
+  color: #ec255a;
+  background-color: #faedf0;
+}
+
+.tool i {
+  font-size: 20px;
+}
+
+.ellipse {
+  background-size: contain;
+  width: 70%;
+  height: 70%;
+}

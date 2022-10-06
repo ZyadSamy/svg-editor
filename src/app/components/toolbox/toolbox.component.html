@@ -1,0 +1,17 @@
+<div class="toolbox">
+  <tool
+    *ngFor="let tool of tools"
+    [iconName]="tool.iconName"
+    [toolName]="tool.toolName"
+    [iconLibrary]="tool.iconLibrary"
+    [active]="activeTool === tool.toolName"
+    (click)="toolClicked(tool.toolName)"
+  ></tool>
+
+  <input
+    class="colorPicker"
+    [(colorPicker)]="color"
+    [style.background]="color"
+    (colorPickerChange)="updateColor()"
+  />
+</div>
